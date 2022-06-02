@@ -10,8 +10,13 @@ public static class PizzaService
     {
         Pizzas = new List<Pizza>
         {
-            new Pizza { Id = 1, Name = "Classic Italian", IsGlutenFree = false },
-            new Pizza { Id = 2, Name = "Veggie", IsGlutenFree = true }
+            new Pizza { Id = 1, Name = "Portuguesa", Price = 15.99, IsGlutenFree = true },
+            new Pizza { Id = 2, Name = "Vegetariana", Price = 19.99, IsGlutenFree = true },
+            new Pizza { Id = 3, Name = "Calabresa", Price = 12.99, IsGlutenFree = true },
+            new Pizza { Id = 4, Name = "4 Queijos", Price = 18.99, IsGlutenFree = true },
+            new Pizza { Id = 5, Name = "Lombinho", Price = 14.99, IsGlutenFree = true },
+            new Pizza { Id = 6, Name = "Frango Catupiry", Price = 23.99, IsGlutenFree = true },
+            new Pizza { Id = 7, Name = "A moda", Price = 27.99, IsGlutenFree = true }
         };
     }
 

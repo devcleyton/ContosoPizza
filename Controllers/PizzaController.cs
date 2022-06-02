@@ -18,15 +18,27 @@ public class PizzaController : ControllerBase
 
     //PEGAR PIZZA CONFORME O ID
     [HttpGet("{id}")]
-    public ActionResult<Pizza> Get(int id)
+    public ActionResult<Pizza> GetById(int id)
     {
-        var pizza = PizzaService.Get(id);
+        var pizza = PizzaService.GetById(id);
 
         if (pizza == null)
             return NotFound();
 
         return pizza;
     }
+
+    // //PEGAR PIZZA CONFORME O NOME
+    // [HttpGet("{name}")]
+    // public ActionResult<Pizza> GetByName(string name)
+    // {
+    //     var pizza = PizzaService.GetByName(name);
+
+    //     if (pizza == null)
+    //         return NotFound();
+
+    //     return pizza;
+    // }
 
     //INSERIR PIZZA
     //post -c "{"name":"Portuguesa", "isGlutenFree":false}"
@@ -45,7 +57,7 @@ public class PizzaController : ControllerBase
         if (id != pizza.Id)
             return BadRequest();
 
-        var existingPizza = PizzaService.Get(id);
+        var existingPizza = PizzaService.GetById(id);
         if (existingPizza is null)
             return NotFound();
 
@@ -58,7 +70,7 @@ public class PizzaController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-        var pizza = PizzaService.Get(id);
+        var pizza = PizzaService.GetById(id);
 
         if (pizza is null)
             return NotFound();
